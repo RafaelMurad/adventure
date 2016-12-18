@@ -1,4 +1,4 @@
-from data import locations
+from data import *
 
 directions = {
     'west': (-1, 0),
@@ -11,7 +11,8 @@ position = (0, 0)
 
 while True:
     location = locations[position]
-    print 'you are at the %s' % location
+    location_desc = locations_desc[position]
+    print 'you are at %s and %s' % (location,location_desc)
 
     valid_directions = {}
     for k, v in directions.iteritems():
@@ -20,6 +21,7 @@ while True:
         if possible_location:
             print 'to the %s is a %s' % (k, possible_location)
             valid_directions[k] = possible_position
+
 
     direction = raw_input('which direction do you want to go?\n')
 
